@@ -29,21 +29,6 @@
 		<img id="down" src="./arrows/staticDown.png">
 		<img id="right" src="./arrows/staticRight.png">
     </div>	
-<script src="http://localhost:8080/socket.io/socket.io.js"></script>
-<script>
-  	var socket = io('http://localhost:8080');
-	$('#test').on('click', function() {
-	  socket.emit('detectedBlock');
-  	  socket.on('sentBlock', function (data) {
-    	console.log(data);
-  	  });
-	});
-
-	// socket.on('detectedBlock', function (data) {
-	// 	console.log(data);
-	// 	socket.emit('detectedBlock', { my: 'data' });
-	// });
-</script>
 </script>
 </body>
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>

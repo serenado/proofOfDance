@@ -13,5 +13,4 @@ function voteForCandidate() {
 $(document).ready(function() {
 	var val = web3.eth.blockNumber;
 	$(".counter").html(val);
-	
 });
