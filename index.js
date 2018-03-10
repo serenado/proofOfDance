@@ -1,19 +1,124 @@
 web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-abi = JSON.parse('[{"constant":false,"inputs":[{"name":"candidate","type":"bytes32"}],"name":"totalVotesFor","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"candidate","type":"bytes32"}],"name":"validCandidate","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"bytes32"}],"name":"votesReceived","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"x","type":"bytes32"}],"name":"bytes32ToString","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"candidateList","outputs":[{"name":"","type":"bytes32"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"candidate","type":"bytes32"}],"name":"voteForCandidate","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"contractOwner","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"inputs":[{"name":"candidateNames","type":"bytes32[]"}],"payable":false,"type":"constructor"}]')
-VotingContract = web3.eth.contract(abi);
+abi = JSON.parse('[
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "player",
+        "type": "bytes32"
+      }
+    ],
+    "name": "totalPointsFor",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "payable": false,
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "name": "pointsReceived",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "payable": false,
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "x",
+        "type": "bytes32"
+      }
+    ],
+    "name": "bytes32ToString",
+    "outputs": [
+      {
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "payable": false,
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "playerList",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "payable": false,
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "player",
+        "type": "bytes32"
+      }
+    ],
+    "name": "pointsForPlayer",
+    "outputs": [],
+    "payable": false,
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "contractOwner",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "name": "playerNames",
+        "type": "bytes32[]"
+      }
+    ],
+    "payable": false,
+    "type": "constructor"
+  }
+]')
+DancingContract = web3.eth.contract(abi);
 // In your nodejs console, execute contractInstance.address to get the address at which the contract is deployed and change the line below to use your deployed address
-contractInstance = VotingContract.at('0x2a9c1d265d06d47e8f7b00ffa987c9185aecf672');
-candidates = {"Rama": "candidate-1", "Nick": "candidate-2", "Jose": "candidate-3"}
+contractInstance = DancingContract.at('0xcd07d6e11af5f69ca302d6a2a9f81a46877b5490');
+players = {"Player": "player-1"}
 
-function voteForCandidate() {
-  candidateName = "Rama"
-  contractInstance.voteForCandidate(candidateName, {from: web3.eth.accounts[0]});
-
-	var val = web3.eth.blockNumber;
-	$(".counter").html(val);
-
+function pointsForPlayer() {
+	contractInstance.pointsForPlayer("Player", {from: web3.eth.accounts[0]});
+	var blocksMined = web3.eth.blockNumber;
+	$(".counter").html(blocksMined);
 }
-
 
 var randomHashes = 
 ['0x9c02f5c68e02390a3ab81f63341edc1ba5dbb39e',

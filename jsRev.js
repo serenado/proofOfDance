@@ -190,13 +190,13 @@ $(document).ready(function () {
 
 // Listening for when the key is pressed
 $(document).keydown( function(event) {
-	
+
+
 	for (var i = 0; i < notes.length; i++) {
 	
 			// console.log(notes[i].image.position().top);
 
 		if (event.keyCode == 37 && notes[i].direction == "left") {
-
 			if (notes[i].image.position().top > 490 && notes[i].image.position().top < 530) {
 
 				snd1.pause();
@@ -205,7 +205,8 @@ $(document).keydown( function(event) {
 				snd1.play();
 				console.log("score is: " + score);
 				console.log("LEFT! "+notes[i].explode());
-				voteForCandidate();
+				
+				pointsForPlayer();
 			}
 			
 		}
@@ -219,7 +220,8 @@ $(document).keydown( function(event) {
 				snd2.play();
 				console.log("score is: " + score);
 				console.log("UP! "+notes[i].explode());
-				voteForCandidate();
+
+				pointsForPlayer();
 
 			}
 
@@ -235,7 +237,7 @@ $(document).keydown( function(event) {
 				console.log("score is: " + score);
 				console.log("DOWN! "+notes[i].explode());
 
-				voteForCandidate();
+				pointsForPlayer();
 			}
 
 		}
@@ -250,7 +252,7 @@ $(document).keydown( function(event) {
 				console.log("score is: " + score);
 				console.log("RIGHT! "+notes[i].explode());
 
-				voteForCandidate();
+				pointsForPlayer();
 			}
 
 		}
