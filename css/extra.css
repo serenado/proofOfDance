@@ -1,0 +1,68 @@
+@import url('https://rsms.me/inter/inter-ui.css');
+
+body {
+	background-color: #000;
+	font-family: 'Inter UI', sans-serif;
+}
+.stage {
+	background-color: #ff0;
+	text-align: center;
+	padding: 0;
+	width: 95vw;
+	height: 90vh;
+	margin: 0 auto;
+}
+#controls {
+	text-align: center;
+	/*border: 1px solid red;*/
+	padding-left: 40vw;
+}
+
+#controls > img {
+	z-index: 1;
+	float: left;
+	/*border: 1px solid red;*/
+}
+
+
+.text > .dance {
+	font-size: 25rem;
+	padding: 4vh 0 0 4vw;
+	margin: 0;
+	float:left;
+	z-index: 1;
+	width: 40vw;
+	line-height: 0.8;
+	letter-spacing: -0.07em;
+}
+
+.text > .dance > .miner {
+	font-size: 55rem;
+	line-height: 0.75;
+	z-index: 1;
+	letter-spacing: -0.07em;
+}
+
+.text > .dance > .counter {
+	font-size: 20rem;
+	font-weight: 200;
+	z-index: 2;
+	position: absolute;
+	top: 5vh;
+	right: 5vw;
+	letter-spacing: -0.07em;
+	color: #000;
+}
+
+/*#left {
+
+}
+#up {
+
+}
+#down {
+
+}
+#right {
+
+}*/
