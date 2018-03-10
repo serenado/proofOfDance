@@ -1,23 +1,22 @@
 // 'notes' to store Arrows  
 var notes = [];
 
-
-
-// GANACHE // 
-var ganache = require("ganache-cli");
-var server = ganache.server();
-var $ = require('jQuery');
-server.listen(function(err, blockchain) {'http://localhost:8545'});
-
-
-
-
 // ==== CLASS FOR ARROWS ==== //
 
 // 1. Direction of arrows
 // 2. jQuery img that links to direction bottom
 // 3. Destroy when it arrow gets to the 
 // 4. Explode when arrow gets to the bottom
+
+
+
+
+//sound effect
+var snd1 = new Audio("sounds/beep.wav");
+var snd2 = new Audio("sounds/smash.wav");
+var snd3 = new Audio("sounds/punch.wav");
+var snd4 = new Audio("sounds/hornii.wav");
+
 
 // Class Arrow
 function Arrow(direction) {
@@ -200,7 +199,10 @@ $(document).keydown( function(event) {
 
 			if (notes[i].image.position().top > 490 && notes[i].image.position().top < 530) {
 
+				snd1.pause();
+				snd1.currentTime = 0;
 				score = score+1;
+				snd1.play();
 				console.log("score is: " + score);
 				console.log("LEFT! "+notes[i].explode());
 
@@ -211,7 +213,10 @@ $(document).keydown( function(event) {
 
 			if (notes[i].image.position().top > 490 && notes[i].image.position().top < 530) {
 				
+				snd2.pause();
+				snd2.currentTime = 0;
 				score = score+1;
+				snd2.play();
 				console.log("score is: " + score);
 				console.log("UP! "+notes[i].explode());
 
@@ -222,7 +227,10 @@ $(document).keydown( function(event) {
 
 			if (notes[i].image.position().top > 490 && notes[i].image.position().top < 530) {
 				
+				snd3.pause();
+				snd3.currentTime = 0;
 				score = score+1;
+				snd3.play();
 				console.log("score is: " + score);
 				console.log("DOWN! "+notes[i].explode());
 
@@ -233,7 +241,10 @@ $(document).keydown( function(event) {
 
 			if (notes[i].image.position().top > 490 && notes[i].image.position().top < 530) {
 				
+				snd4.pause();
+				snd4.currentTime = 0;
 				score = score+1;
+				snd4.play();
 				console.log("score is: " + score);
 				console.log("RIGHT! "+notes[i].explode());
 
