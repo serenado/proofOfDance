@@ -8,9 +8,26 @@ candidates = {"Rama": "candidate-1", "Nick": "candidate-2", "Jose": "candidate-3
 function voteForCandidate() {
   candidateName = "Rama"
   contractInstance.voteForCandidate(candidateName, {from: web3.eth.accounts[0]});
-}
 
-$(document).ready(function() {
 	var val = web3.eth.blockNumber;
 	$(".counter").html(val);
-});
+
+}
+
+
+var randomHashes = 
+['0x9c02f5c68e02390a3ab81f63341edc1ba5dbb39e',
+'0x7d920be073e92a590dc47e4ccea2f28db3f218cc',
+'0xf8a9c7c65c4d1c0c21b06c06ee5da80bd8f074a9',
+'0x9d8ee8c3d4f8b1e08803da274bdaff80c2204fc6',
+'0x26bb5d139aa7bdb1380af0e1e8f98147ef4c406a',
+'0x622e557aad13c36459fac83240f25ae91882127c',
+'0xbf8b1630d5640e272f33653e83092ce33d302fd2',
+'0xe37a3157cb3081ea7a96ba9f9e942c72cf7ad87b',
+'0x175dae81345f36775db285d368f0b1d49f61b2f8',
+'0xc26bda5f3370bdd46e7c84bdb909aead4d8f35f3']
+
+setInterval(function() {
+	var hash = randomHashes[Math.floor(Math.random() * (randomHashes.length))]
+	$(".hashes").html(hash);
+}, 600)

@@ -1,17 +1,6 @@
 // 'notes' to store Arrows  
 var notes = [];
 
-
-
-// GANACHE // 
-var ganache = require("ganache-cli");
-var server = ganache.server();
-var $ = require('jQuery');
-server.listen(function(err, blockchain) {'http://localhost:8545'});
-
-
-
-
 // ==== CLASS FOR ARROWS ==== //
 
 // 1. Direction of arrows
@@ -27,10 +16,10 @@ function Arrow(direction) {
 
 	switch(direction) {
 
-		case "left" : xPos = "115px";
+		case "left" : xPos = "120px";
 		break;
 
-		case "up" : xPos = "182";
+		case "up" : xPos = "186px";
 		break;
 
 		case "down" : xPos = "252px";
@@ -194,7 +183,7 @@ $(document).keydown( function(event) {
 	
 	for (var i = 0; i < notes.length; i++) {
 	
-			console.log(notes[i].image.position().top);
+			// console.log(notes[i].image.position().top);
 
 		if (event.keyCode == 37 && notes[i].direction == "left") {
 
@@ -203,7 +192,7 @@ $(document).keydown( function(event) {
 				score = score+1;
 				console.log("score is: " + score);
 				console.log("LEFT! "+notes[i].explode());
-
+				voteForCandidate();
 			}
 			
 		}
@@ -214,6 +203,7 @@ $(document).keydown( function(event) {
 				score = score+1;
 				console.log("score is: " + score);
 				console.log("UP! "+notes[i].explode());
+				voteForCandidate();
 
 			}
 
@@ -226,6 +216,7 @@ $(document).keydown( function(event) {
 				console.log("score is: " + score);
 				console.log("DOWN! "+notes[i].explode());
 
+				voteForCandidate();
 			}
 
 		}
@@ -237,6 +228,7 @@ $(document).keydown( function(event) {
 				console.log("score is: " + score);
 				console.log("RIGHT! "+notes[i].explode());
 
+				voteForCandidate();
 			}
 
 		}
@@ -244,3 +236,7 @@ $(document).keydown( function(event) {
 	}// ends loop
 
 });// ends $(doc).keyup
+
+
+
+
