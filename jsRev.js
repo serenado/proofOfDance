@@ -16,7 +16,10 @@ var snd1 = new Audio("sounds/beep.wav");
 var snd2 = new Audio("sounds/smash.wav");
 var snd3 = new Audio("sounds/punch.wav");
 var snd4 = new Audio("sounds/hornii.wav");
-
+snd1.volume=0.2;
+snd2.volume=0.2;
+snd3.volume=0.2;
+snd4.volume=0.2;
 
 // Class Arrow
 function Arrow(direction) {
