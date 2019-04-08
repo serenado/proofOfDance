@@ -141,7 +141,7 @@ function render() {
 		notes[i].step();
 
 		// Check for cleanup
-		if (notes[i].image.position().top > 615) {
+		if (notes[i].image.position().top > 750) {
 
 			notes[i].destroy();
 
@@ -200,7 +200,7 @@ $(document).keydown( function(event) {
 			// console.log(notes[i].image.position().top);
 
 		if (event.keyCode == 37 && notes[i].direction == "left") {
-			if (notes[i].image.position().top > 490 && notes[i].image.position().top < 530) {
+			if (notes[i].image.position().top > 690 && notes[i].image.position().top < 730) {
 
 				snd1.pause();
 				snd1.currentTime = 0;
@@ -215,7 +215,7 @@ $(document).keydown( function(event) {
 		}
 		if (event.keyCode == 38 && notes[i].direction == "up") {
 
-			if (notes[i].image.position().top > 490 && notes[i].image.position().top < 530) {
+			if (notes[i].image.position().top > 690 && notes[i].image.position().top < 730) {
 				
 				snd2.pause();
 				snd2.currentTime = 0;
@@ -231,7 +231,7 @@ $(document).keydown( function(event) {
 		}
 		if (event.keyCode == 40 && notes[i].direction == "down") {
 
-			if (notes[i].image.position().top > 490 && notes[i].image.position().top < 530) {
+			if (notes[i].image.position().top > 690 && notes[i].image.position().top < 730) {
 				
 				snd3.pause();
 				snd3.currentTime = 0;
@@ -246,7 +246,7 @@ $(document).keydown( function(event) {
 		}
 		if (event.keyCode == 39 && notes[i].direction == "right") {
 
-			if (notes[i].image.position().top > 490 && notes[i].image.position().top < 530) {
+			if (notes[i].image.position().top > 690 && notes[i].image.position().top < 730) {
 				
 				snd4.pause();
 				snd4.currentTime = 0;
